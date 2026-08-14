@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nuestro primer año ❤️</title>
+<title>Nuestro comienzo ❤️</title>
 <style>
 :root{--pink:#f7b6ca;--rose:#e86f9b;--deep:#8e2854;--cream:#fff7fa;--soft:#fde4ed}
-*{box-sizing:border-box} body{margin:0;background:linear-gradient(180deg,#fff7fa,#fde8f0);color:#57243b;font-family:Georgia,serif}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#fff7fa,#fde8f0);color:#57243b;font-family:Georgia,serif}
 header{padding:20px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#fff8fbea;backdrop-filter:blur(10px);z-index:5}
 .logo{font-size:25px;color:var(--deep)} nav{font:14px Arial,sans-serif;color:#7a4560}
 .hero{margin:18px auto;max-width:1100px;padding:24px;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
@@ -21,13 +22,26 @@ section{max-width:1100px;margin:35px auto;padding:30px 24px}
 .gallery figure{margin:0;border-radius:20px;overflow:hidden;box-shadow:0 7px 22px #8e285425}
 .gallery img{width:100%;height:100%;object-fit:cover;display:block}
 .g1{grid-column:span 7;height:420px}.g2{grid-column:span 5;height:420px}.g3,.g4,.g5{grid-column:span 4;height:300px}.g6{grid-column:span 5;height:360px}.g7{grid-column:span 7;height:360px}.g8,.g9{grid-column:span 6;height:320px}
-.video{margin-top:45px;background:#f9cada;border-radius:28px;padding:28px;text-align:center}.video h3{font-size:34px;color:var(--deep);font-weight:400}.video-note{font:15px Arial;color:#87546a}
+.video-section{margin-top:55px}
+.video-title{text-align:center}.video-title h2{font-size:42px;margin:8px;color:var(--deep);font-weight:400}.video-title p{font:16px Arial;color:#87546a}
+.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}
+.video-card{background:#fff;border:1px solid #f4bfd0;border-radius:24px;padding:12px;box-shadow:0 8px 25px #8e28541a}
+.video-card video{width:100%;display:block;border-radius:18px;background:#f7dce7;aspect-ratio:9/16;object-fit:cover}
+.video-card .label{padding:12px 6px 5px;text-align:center;font-size:18px;color:var(--deep)}
+.video-card .num{font:700 11px Arial;letter-spacing:2px;color:var(--rose)}
 footer{text-align:center;padding:40px;color:#9a5b76;font:14px Arial}
-@media(max-width:700px){nav{display:none}.hero{grid-template-columns:1fr;padding:15px}.hero img{height:420px}.hero .copy{padding:10px 12px}.gallery{display:grid;grid-template-columns:1fr 1fr}.gallery figure{height:240px!important;grid-column:span 1}.g1{grid-column:span 2!important;height:360px!important}.title h2{font-size:38px}.quote{font-size:20px}}
+@media(max-width:700px){
+header{padding:16px 5%}nav{display:none}
+.hero{grid-template-columns:1fr;padding:15px}.hero img{height:420px}.hero .copy{padding:10px 12px}
+.gallery{display:grid;grid-template-columns:1fr 1fr}.gallery figure{height:240px!important;grid-column:span 1}.g1{grid-column:span 2!important;height:360px!important}
+.title h2{font-size:38px}.quote{font-size:20px}
+.videos{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}
+.video-title h2{font-size:36px}
+}
 </style>
 </head>
 <body>
-<header><div class="logo">L & ♥</div><nav>INICIO　 RECUERDOS　 NOSOTROS　 CARTAS　♥</nav></header>
+<header><div class="logo">L & ♥</div><nav>NUESTRO COMIENZO　♥</nav></header>
 <main>
 <div class="hero">
   <img src="foto-08.jpeg" alt="Nuestro recuerdo">
@@ -49,8 +63,30 @@ footer{text-align:center;padding:40px;color:#9a5b76;font:14px Arial}
     <figure class="g8"><img src="foto-04.jpeg"></figure>
     <figure class="g9"><img src="foto-09.jpeg"></figure>
   </div>
-  <div class="video"><h3>Pequeños momentos, grandes recuerdos.</h3><div class="video-note">Acá vamos a colocar el video de este capítulo cuando me pases su enlace.</div></div>
+
+  <div class="video-section">
+    <div class="video-title">
+      <div class="kicker">PEQUEÑOS MOMENTOS</div>
+      <h2>Grandes recuerdos 🎬</h2>
+      <p>Tres pedacitos de nosotros que quiero volver a ver una y otra vez.</p>
+    </div>
+    <div class="videos">
+      <article class="video-card">
+        <video controls playsinline preload="metadata" src="videos/video-01.mp4"></video>
+        <div class="label"><div class="num">VIDEO 01</div>Un momento nuestro ♥</div>
+      </article>
+      <article class="video-card">
+        <video controls playsinline preload="metadata" src="videos/video-02.mp4"></video>
+        <div class="label"><div class="num">VIDEO 02</div>Nosotros</div>
+      </article>
+      <article class="video-card">
+        <video controls playsinline preload="metadata" src="videos/video-03.mp4"></video>
+        <div class="label"><div class="num">VIDEO 03</div>Un recuerdo más ♥</div>
+      </article>
+    </div>
+  </div>
 </section>
 </main>
 <footer>01 / 10　♥　 Nuestro primer año</footer>
-</body></html>
+</body>
+</html>
