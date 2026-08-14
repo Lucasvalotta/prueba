@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bonus Track ♡</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:#f7dce7;
+  color:#3a2630;
+  font-family:Georgia,serif
+}
+
+.wrap{
+  max-width:1250px;
+  margin:auto;
+  padding:42px 22px 70px
+}
+
+header{
+  text-align:center;
+  padding:15px 0 35px
+}
+
+.k{
+  font:700 13px Arial;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  opacity:.65
+}
+
+h1{
+  font-size:82px;
+  margin:12px 0 5px;
+  font-weight:500
+}
+
+.sub{
+  font-size:18px;
+  opacity:.7
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px
+}
+
+.card{
+  border:0;
+  padding:0;
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  cursor:pointer;
+  box-shadow:0 7px 22px #4d253322;
+  position:relative;
+  aspect-ratio:3/4
+}
+
+.card img,
+.card video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block
+}
+
+.card:nth-child(3n){
+  transform:rotate(.7deg)
+}
+
+.card:nth-child(4n){
+  transform:rotate(-.6deg)
+}
+
+.video span{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  background:#fffc;
+  border-radius:50%;
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  font:22px Arial;
+  color:#7c3e59
+}
+
+footer{
+  text-align:center;
+  margin-top:42px;
+  font-size:17px;
+  opacity:.7
+}
+
+.lb{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#190e14ee;
+  z-index:5;
+  align-items:center;
+  justify-content:center;
+  padding:25px
+}
+
+.lb.open{
+  display:flex
+}
+
+.viewer img,
+.viewer video{
+  max-width:94vw;
+  max-height:88vh;
+  border-radius:10px
+}
+
+.close{
+  position:fixed;
+  right:25px;
+  top:15px;
+  color:#fff;
+  background:none;
+  border:0;
+  font-size:42px;
+  cursor:pointer
+}
+
+@media(max-width:850px){
+  .grid{
+    grid-template-columns:repeat(3,1fr)
+  }
+}
+
+@media(max-width:560px){
+  h1{
+    font-size:55px
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:9px
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<header>
+  <div class="k">cuarta y última página</div>
+  <h1>Bonus Track ♡</h1>
+  <div class="sub">los momentos que quedaron fuera del álbum</div>
+</header>
+
+<main class="grid">
+
+<button class="card" onclick="openMedia('img','foto-01.jpeg')">
+  <img src="foto-01.jpeg" loading="lazy" alt="Foto 1">
+</button>
+
+<button class="card" onclick="openMedia('img','foto-02.jpeg')">
+  <img src="foto-02.jpeg" loading="lazy" alt="Foto 2">
+</button>
+
+<button class="card" onclick="openMedia('img','foto-03.jpeg')">
+  <img src="foto-03.jpeg" loading="lazy" alt="Foto 3">
+</button>
+
+<button class="card" onclick="openMedia('img','foto-04.jpeg')">
+  <img src="foto-04.jpeg" loading="lazy" alt="Foto 4">
+</button>
+
+<button class="card" onclick="openMedia('img','foto-05.jpeg')">
+  <img src="foto-05.jpeg" loading="lazy" alt="Foto 5">
+</button>
+
+<button class="card" onclick="openMedia('img','foto-06.jpeg')">
+  <img src="foto-06.jpeg" loading="lazy" alt="Foto 6">
+</button>
+
+<button class="card" onclick="openMedia('img','foto-07.jpeg')">
+  <img src="foto-07.jpeg" loading="lazy" alt="Foto 7">
+</button>
+
+<button class="card" onclick="openMedia('img','foto-08.jpeg')">
+  <img src="foto-08.jpeg" loading="lazy" alt="Foto 8">
+</button>
+
+<button class="card" onclick="openMedia('img','foto-09.jpeg')">
+  <img src="foto-09.jpeg" loading="lazy" alt="Foto 9">
+</button>
+
+<button class="card" onclick="openMedia('img','foto-10.jpeg')">
+  <img src="foto-10.jpeg" loading="lazy" alt="Foto 10">
+</button>
+
+<button class="card" onclick="openMedia('img','foto-11.jpeg')">
+  <img src="foto-11.jpeg" loading="lazy" alt="Foto 11">
+</button>
+
+<button class="card" onclick="openMedia('img','foto-12.jpeg')">
+  <img src="foto-12.jpeg" loading="lazy" alt="Foto 12">
+</button>
+
+<button class="card" onclick="openMedia('img','foto-13.jpeg')">
+  <img src="foto-13.jpeg" loading="lazy" alt="Foto 13">
+</button>
+
+<button class="card video" onclick="openMedia('video','video-01.mp4')">
+  <video src="video-01.mp4" muted preload="metadata"></video>
+  <span>▶</span>
+</button>
+
+<button class="card video" onclick="openMedia('video','video-02.mp4')">
+  <video src="video-02.mp4" muted preload="metadata"></video>
+  <span>▶</span>
+</button>
+
+<button class="card video" onclick="openMedia('video','video-03.mp4')">
+  <video src="video-03.mp4" muted preload="metadata"></video>
+  <span>▶</span>
+</button>
+
+<button class="card video" onclick="openMedia('video','video-04.mp4')">
+  <video src="video-04.mp4" muted preload="metadata"></video>
+  <span>▶</span>
+</button>
+
+<button class="card video" onclick="openMedia('video','video-05.mp4')">
+  <video src="video-05.mp4" muted preload="metadata"></video>
+  <span>▶</span>
+</button>
+
+<button class="card video" onclick="openMedia('video','video-06.mp4')">
+  <video src="video-06.mp4" muted preload="metadata"></video>
+  <span>▶</span>
+</button>
+
+<button class="card video" onclick="openMedia('video','video-07.mp4')">
+  <video src="video-07.mp4" muted preload="metadata"></video>
+  <span>▶</span>
+</button>
+
+</main>
+
+<footer>
+  de todo lo que vivimos, todavía queda mucho por recordar ♡
+</footer>
+
+</div>
+
+<div id="lb" class="lb" onclick="closeMedia(event)">
+  <button class="close">×</button>
+  <div id="viewer" class="viewer"></div>
+</div>
+
+<script>
+function openMedia(t,s){
+  let v=document.getElementById('viewer');
+  v.innerHTML='';
+
+  let e=document.createElement(
+    t==='video' ? 'video' : 'img'
+  );
+
+  e.src=s;
+
+  if(t==='video'){
+    e.controls=true;
+    e.autoplay=true;
+  }
+
+  v.appendChild(e);
+  document.getElementById('lb').classList.add('open');
+}
+
+function closeMedia(e){
+  if(e && e.target.closest('#viewer')) return;
+
+  document.getElementById('lb').classList.remove('open');
+
+  let v=document.querySelector('#viewer video');
+  if(v) v.pause();
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape') closeMedia();
+});
+</script>
+
+</body>
+</html>
