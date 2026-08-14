@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Donde empezó a sentirse como hogar 💚</title>
+
+<style>
+:root{
+  --bg:#f3f7ee;
+  --green:#6f8d68;
+  --dark:#31533a;
+  --deep:#25422d;
+  --cream:#fffdf5;
+  --line:#c5d7bd;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  color:var(--deep);
+  font-family:Georgia,serif;
+  background:
+    radial-gradient(circle at 10% 15%,#c9d9c2 0 3px,transparent 4px),
+    radial-gradient(circle at 90% 30%,#b7cdb0 0 2px,transparent 3px),
+    linear-gradient(180deg,var(--bg),#e9f0e5);
+  background-size:160px 160px,190px 190px,auto;
+}
+
+header{
+  padding:20px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:5;
+  background:#f6f8f0e8;
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #d6e2d0;
+}
+
+.logo{
+  font-size:26px;
+  color:var(--dark);
+  letter-spacing:2px;
+}
+
+nav{
+  font:700 13px Arial,sans-serif;
+  letter-spacing:1px;
+  color:var(--dark);
+}
+
+.hero{
+  max-width:1100px;
+  margin:18px auto;
+  padding:24px;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:28px;
+  align-items:center;
+}
+
+.hero img{
+  width:100%;
+  height:540px;
+  object-fit:cover;
+  border-radius:28px;
+  box-shadow:0 15px 45px #31533a30;
+  border:7px solid var(--cream);
+}
+
+.kicker{
+  font:700 13px Arial,sans-serif;
+  letter-spacing:3px;
+  color:var(--green);
+}
+
+h1{
+  font-size:clamp(42px,6vw,76px);
+  line-height:.98;
+  margin:15px 0;
+  color:var(--deep);
+  font-weight:400;
+}
+
+.hero-copy p{
+  font:18px Arial,sans-serif;
+  color:#4e6954;
+  line-height:1.65;
+}
+
+.house-note{
+  margin-top:24px;
+  display:inline-block;
+  background:#d7e5d0;
+  border:1px solid #b9ceb0;
+  padding:12px 18px;
+  border-radius:30px;
+  font:600 14px Arial;
+  color:var(--dark);
+}
+
+section{
+  max-width:1100px;
+  margin:35px auto;
+  padding:30px 24px;
+}
+
+.title{
+  text-align:center;
+}
+
+.title h2{
+  font-size:46px;
+  margin:8px;
+  color:var(--deep);
+  font-weight:400;
+}
+
+.title p{
+  font:16px Arial;
+  color:#59715e;
+  line-height:1.55;
+}
+
+.quote{
+  max-width:720px;
+  margin:28px auto;
+  background:#e0ebda;
+  padding:28px;
+  border-radius:26px;
+  text-align:center;
+  font-size:23px;
+  color:var(--dark);
+  border:1px solid #c4d8bc;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-top:28px;
+}
+
+.gallery figure{
+  margin:0;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 8px 24px #31533a20;
+  border:6px solid var(--cream);
+}
+
+.gallery img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  display:block;
+}
+
+.gallery figure:first-child{
+  grid-column:span 2;
+}
+
+.gallery figure:first-child img{
+  height:500px;
+}
+
+.video-section{
+  margin-top:58px;
+}
+
+.video-title{
+  text-align:center;
+}
+
+.video-title h2{
+  font-size:42px;
+  margin:8px;
+  color:var(--deep);
+  font-weight:400;
+}
+
+.video-title p{
+  font:16px Arial;
+  color:#59715e;
+}
+
+.videos{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:25px;
+}
+
+.video-card{
+  background:var(--cream);
+  border:1px solid #c8d8c1;
+  border-radius:24px;
+  padding:12px;
+  box-shadow:0 8px 24px #31533a16;
+}
+
+.video-card video{
+  width:100%;
+  display:block;
+  border-radius:18px;
+  background:#dfe9da;
+  aspect-ratio:9/16;
+  object-fit:cover;
+}
+
+.label{
+  text-align:center;
+  padding:12px 4px 5px;
+  color:var(--dark);
+  font-size:18px;
+}
+
+.num{
+  font:700 11px Arial;
+  letter-spacing:2px;
+  color:var(--green);
+  margin-bottom:4px;
+}
+
+.final{
+  margin:55px auto 10px;
+  max-width:700px;
+  text-align:center;
+  padding:30px;
+  border-radius:28px;
+  background:#d9e7d3;
+  border:1px solid #b9cfb0;
+}
+
+.final h3{
+  font-size:31px;
+  font-weight:400;
+  margin:0 0 12px;
+  color:var(--deep);
+}
+
+.final p{
+  font:16px Arial;
+  line-height:1.7;
+  color:#4e6954;
+  margin:0;
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  color:#648064;
+  font:14px Arial;
+}
+
+@media(max-width:700px){
+
+  header{
+    padding:16px 5%;
+  }
+
+  nav{
+    font-size:11px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    padding:15px;
+  }
+
+  .hero img{
+    height:420px;
+  }
+
+  .hero-copy{
+    padding:8px 12px;
+  }
+
+  .title h2{
+    font-size:37px;
+  }
+
+  .quote{
+    font-size:20px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .gallery figure:first-child{
+    grid-column:span 1;
+  }
+
+  .gallery img,
+  .gallery figure:first-child img{
+    height:310px;
+  }
+
+  .videos{
+    grid-template-columns:1fr;
+    max-width:430px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .video-title h2{
+    font-size:36px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">♡ J & L ♡</div>
+  <nav>DONDE EMPEZÓ A SENTIRSE COMO HOGAR</nav>
+</header>
+
+<main>
+
+<div class="hero">
+
+  <img src="foto-01.jpeg" alt="Un recuerdo juntos">
+
+  <div class="hero-copy">
+
+    <div class="kicker">
+      NUESTRA PRIMERA CASA
+    </div>
+
+    <h1>
+      Donde empezó a sentirse como hogar
+    </h1>
+
+    <p>
+      Entre mi familia, tu sonrisa y esos primeros momentos juntos,
+      empezamos a descubrir que estar cerca podía sentirse muy parecido
+      a estar en casa.
+    </p>
+
+    <span class="house-note">
+      ♡ Un pequeño comienzo de algo enorme
+    </span>
+
+  </div>
+
+</div>
+
+<section>
+
+  <div class="title">
+
+    <div class="kicker">
+      PEQUEÑOS MOMENTOS, GRANDES COMIENZOS
+    </div>
+
+    <h2>
+      De a poquito, formabas parte de mi mundo
+    </h2>
+
+    <p>
+      Quizás en ese momento no nos dábamos cuenta, pero estábamos
+      guardando algunas de nuestras primeras postales de una vida
+      que recién empezaba.
+    </p>
+
+  </div>
+
+  <div class="quote">
+    “Conocernos también era aprender a compartir lo cotidiano.” ♡
+  </div>
+
+  <div class="gallery">
+
+    <figure>
+      <img src="foto-01.jpeg" alt="Recuerdo 1">
+    </figure>
+
+    <figure>
+      <img src="foto-02.jpeg" alt="Recuerdo 2">
+    </figure>
+
+    <figure>
+      <img src="foto-03.jpeg" alt="Recuerdo 3">
+    </figure>
+
+  </div>
+
+  <div class="video-section">
+
+    <div class="video-title">
+
+      <div class="kicker">
+        ESOS DÍAS
+      </div>
+
+      <h2>
+        Así éramos nosotros 🎬
+      </h2>
+
+      <p>
+        Sin poses, sin planes, sin saber todo lo que vendría después.
+      </p>
+
+    </div>
+
+    <div class="videos">
+
+      <article class="video-card">
+
+        <video controls playsinline preload="metadata" src="video-01.mp4"></video>
+
+        <div class="label">
+          <div class="num">
+            UN RECUERDO
+          </div>
+          Un pedacito de aquellos días ♡
+        </div>
+
+      </article>
+
+      <article class="video-card">
+
+        <video controls playsinline preload="metadata" src="video-02.mp4"></video>
+
+        <div class="label">
+          <div class="num">
+            NOSOTROS
+          </div>
+          Cada vez más nosotros
+        </div>
+
+      </article>
+
+      <article class="video-card">
+
+        <video controls playsinline preload="metadata" src="video-03.mp4"></video>
+
+        <div class="label">
+          <div class="num">
+            AQUELLOS DÍAS
+          </div>
+          Y recién estábamos empezando
+        </div>
+
+      </article>
+
+      <article class="video-card">
+
+        <video controls playsinline preload="metadata" src="video-04.mp4"></video>
+
+        <div class="label">
+          <div class="num">
+            UN MOMENTO MÁS
+          </div>
+          De esos que hoy guardo con cariño
+        </div>
+
+      </article>
+
+      <article class="video-card">
+
+        <video controls playsinline preload="metadata" src="video-05.mp4"></video>
+
+        <div class="label">
+          <div class="num">
+            EN CASA
+          </div>
+          Donde todo se sentía sencillo
+        </div>
+
+      </article>
+
+      <article class="video-card">
+
+        <video controls playsinline preload="metadata" src="video-06.mp4"></video>
+
+        <div class="label">
+          <div class="num">
+            EL COMIENZO
+          </div>
+          Sin saber todo lo que venía ♡
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+  <div class="final">
+
+    <h3>
+      ¿Y si esto recién era el comienzo?
+    </h3>
+
+    <p>
+      Una casa, un perro, algunas plantas...
+      <br>
+      y quién sabe cuántas pequeñas personitas corriendo por ahí.
+      <br><br>
+      Pero eso lo dejamos para otra historia. ♡
+    </p>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  ♡ Una de esas primeras veces que empezamos a compartir la vida ♡
+</footer>
+
+</body>
+</html>
