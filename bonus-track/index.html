@@ -15,6 +15,97 @@ body{
   font-family:Georgia,serif
 }
 
+/* PANTALLA DE ACCESO */
+
+#lock{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:#f7dce7;
+}
+
+.lock-box{
+  width:min(520px,100%);
+  background:#fffafc;
+  border:2px solid #d79ab3;
+  border-radius:24px;
+  padding:42px 30px;
+  text-align:center;
+  box-shadow:0 12px 35px #4d253322;
+}
+
+.lock-heart{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.lock-k{
+  font:700 12px Arial,sans-serif;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  opacity:.6;
+}
+
+.lock-box h1{
+  font-size:42px;
+  font-weight:500;
+  margin:12px 0 8px;
+}
+
+.lock-box p{
+  font-size:17px;
+  line-height:1.5;
+  opacity:.72;
+  margin:0 0 24px;
+}
+
+#password{
+  width:100%;
+  padding:15px 16px;
+  border:1px solid #d79ab3;
+  border-radius:12px;
+  font:16px Arial,sans-serif;
+  text-align:center;
+  outline:none;
+  background:white;
+}
+
+#password:focus{
+  border-color:#9f5578;
+  box-shadow:0 0 0 3px #d79ab333;
+}
+
+#enter{
+  width:100%;
+  margin-top:12px;
+  padding:15px;
+  border:0;
+  border-radius:12px;
+  background:#9f5578;
+  color:white;
+  font:700 15px Arial,sans-serif;
+  cursor:pointer;
+}
+
+#enter:hover{
+  background:#844463;
+}
+
+#error{
+  display:none;
+  margin-top:12px;
+  color:#9a3155;
+  font:14px Arial,sans-serif;
+}
+
+/* SITIO ORIGINAL */
+
+#site{
+  display:none;
+}
+
 .wrap{
   max-width:1250px;
   margin:auto;
@@ -100,6 +191,8 @@ footer{
   opacity:.7
 }
 
+/* VISOR */
+
 .lb{
   display:none;
   position:fixed;
@@ -133,13 +226,18 @@ footer{
   cursor:pointer
 }
 
+/* RESPONSIVE */
+
 @media(max-width:850px){
+
   .grid{
     grid-template-columns:repeat(3,1fr)
   }
+
 }
 
 @media(max-width:560px){
+
   h1{
     font-size:55px
   }
@@ -148,154 +246,639 @@ footer{
     grid-template-columns:repeat(2,1fr);
     gap:9px
   }
+
+  .lock-box h1{
+    font-size:34px
+  }
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- =========================================
+     PANTALLA DE ACCESO
+     ========================================= -->
+
+<section id="lock">
+
+  <div class="lock-box">
+
+    <div class="lock-heart">♡</div>
+
+    <div class="lock-k">
+      bonus track
+    </div>
+
+    <h1>
+      Un recuerdo privado
+    </h1>
+
+    <p>
+      Hay una última parte de nuestra historia
+      esperando ser descubierta.<br>
+      Ingresá la palabra clave para continuar ♡
+    </p>
+
+    <form id="loginForm">
+
+      <input
+        id="password"
+        type="password"
+        placeholder="Palabra clave"
+        autocomplete="off"
+        aria-label="Palabra clave"
+      >
+
+      <button
+        id="enter"
+        type="submit"
+      >
+        Descubrir ♡
+      </button>
+
+      <div id="error">
+        Esa no es la palabra clave ♡
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     BONUS TRACK
+     ========================================= -->
+
+<div id="site">
+
 <div class="wrap">
 
 <header>
-  <div class="k">cuarta y última página</div>
-  <h1>Bonus Track ♡</h1>
-  <div class="sub">los momentos que quedaron fuera del álbum</div>
+
+  <div class="k">
+    cuarta y última página
+  </div>
+
+  <h1>
+    Bonus Track ♡
+  </h1>
+
+  <div class="sub">
+    los momentos que quedaron fuera del álbum
+  </div>
+
 </header>
+
 
 <main class="grid">
 
-<button class="card" onclick="openMedia('img','foto-01.jpeg')">
-  <img src="foto-01.jpeg" loading="lazy" alt="Foto 1">
+
+<!-- FOTO 01 -->
+
+<button
+  class="card"
+  onclick="openMedia('img','foto-01.jpeg')"
+>
+
+  <img
+    src="foto-01.jpeg"
+    loading="lazy"
+    alt="Foto 1"
+  >
+
 </button>
 
-<button class="card" onclick="openMedia('img','foto-02.jpeg')">
-  <img src="foto-02.jpeg" loading="lazy" alt="Foto 2">
+
+<!-- FOTO 02 -->
+
+<button
+  class="card"
+  onclick="openMedia('img','foto-02.jpeg')"
+>
+
+  <img
+    src="foto-02.jpeg"
+    loading="lazy"
+    alt="Foto 2"
+  >
+
 </button>
 
-<button class="card" onclick="openMedia('img','foto-03.jpeg')">
-  <img src="foto-03.jpeg" loading="lazy" alt="Foto 3">
+
+<!-- FOTO 03 -->
+
+<button
+  class="card"
+  onclick="openMedia('img','foto-03.jpeg')"
+>
+
+  <img
+    src="foto-03.jpeg"
+    loading="lazy"
+    alt="Foto 3"
+  >
+
 </button>
 
-<button class="card" onclick="openMedia('img','foto-04.jpeg')">
-  <img src="foto-04.jpeg" loading="lazy" alt="Foto 4">
+
+<!-- FOTO 04 -->
+
+<button
+  class="card"
+  onclick="openMedia('img','foto-04.jpeg')"
+>
+
+  <img
+    src="foto-04.jpeg"
+    loading="lazy"
+    alt="Foto 4"
+  >
+
 </button>
 
-<button class="card" onclick="openMedia('img','foto-05.jpeg')">
-  <img src="foto-05.jpeg" loading="lazy" alt="Foto 5">
+
+<!-- FOTO 05 -->
+
+<button
+  class="card"
+  onclick="openMedia('img','foto-05.jpeg')"
+>
+
+  <img
+    src="foto-05.jpeg"
+    loading="lazy"
+    alt="Foto 5"
+  >
+
 </button>
 
-<button class="card" onclick="openMedia('img','foto-06.jpeg')">
-  <img src="foto-06.jpeg" loading="lazy" alt="Foto 6">
+
+<!-- FOTO 06 -->
+
+<button
+  class="card"
+  onclick="openMedia('img','foto-06.jpeg')"
+>
+
+  <img
+    src="foto-06.jpeg"
+    loading="lazy"
+    alt="Foto 6"
+  >
+
 </button>
 
-<button class="card" onclick="openMedia('img','foto-07.jpeg')">
-  <img src="foto-07.jpeg" loading="lazy" alt="Foto 7">
+
+<!-- FOTO 07 -->
+
+<button
+  class="card"
+  onclick="openMedia('img','foto-07.jpeg')"
+>
+
+  <img
+    src="foto-07.jpeg"
+    loading="lazy"
+    alt="Foto 7"
+  >
+
 </button>
 
-<button class="card" onclick="openMedia('img','foto-08.jpeg')">
-  <img src="foto-08.jpeg" loading="lazy" alt="Foto 8">
+
+<!-- FOTO 08 -->
+
+<button
+  class="card"
+  onclick="openMedia('img','foto-08.jpeg')"
+>
+
+  <img
+    src="foto-08.jpeg"
+    loading="lazy"
+    alt="Foto 8"
+  >
+
 </button>
 
-<button class="card" onclick="openMedia('img','foto-09.jpeg')">
-  <img src="foto-09.jpeg" loading="lazy" alt="Foto 9">
+
+<!-- FOTO 09 -->
+
+<button
+  class="card"
+  onclick="openMedia('img','foto-09.jpeg')"
+>
+
+  <img
+    src="foto-09.jpeg"
+    loading="lazy"
+    alt="Foto 9"
+  >
+
 </button>
 
-<button class="card" onclick="openMedia('img','foto-10.jpeg')">
-  <img src="foto-10.jpeg" loading="lazy" alt="Foto 10">
+
+<!-- FOTO 10 -->
+
+<button
+  class="card"
+  onclick="openMedia('img','foto-10.jpeg')"
+>
+
+  <img
+    src="foto-10.jpeg"
+    loading="lazy"
+    alt="Foto 10"
+  >
+
 </button>
 
-<button class="card" onclick="openMedia('img','foto-11.jpeg')">
-  <img src="foto-11.jpeg" loading="lazy" alt="Foto 11">
+
+<!-- FOTO 11 -->
+
+<button
+  class="card"
+  onclick="openMedia('img','foto-11.jpeg')"
+>
+
+  <img
+    src="foto-11.jpeg"
+    loading="lazy"
+    alt="Foto 11"
+  >
+
 </button>
 
-<button class="card" onclick="openMedia('img','foto-12.jpeg')">
-  <img src="foto-12.jpeg" loading="lazy" alt="Foto 12">
+
+<!-- FOTO 12 -->
+
+<button
+  class="card"
+  onclick="openMedia('img','foto-12.jpeg')"
+>
+
+  <img
+    src="foto-12.jpeg"
+    loading="lazy"
+    alt="Foto 12"
+  >
+
 </button>
 
-<button class="card" onclick="openMedia('img','foto-13.jpeg')">
-  <img src="foto-13.jpeg" loading="lazy" alt="Foto 13">
+
+<!-- FOTO 13 -->
+
+<button
+  class="card"
+  onclick="openMedia('img','foto-13.jpeg')"
+>
+
+  <img
+    src="foto-13.jpeg"
+    loading="lazy"
+    alt="Foto 13"
+  >
+
 </button>
 
-<button class="card video" onclick="openMedia('video','video-01.mp4')">
-  <video src="video-01.mp4" muted preload="metadata"></video>
+
+<!-- VIDEO 01 -->
+
+<button
+  class="card video"
+  onclick="openMedia('video','video-01.mp4')"
+>
+
+  <video
+    src="video-01.mp4"
+    muted
+    preload="metadata"
+  ></video>
+
   <span>▶</span>
+
 </button>
 
-<button class="card video" onclick="openMedia('video','video-02.mp4')">
-  <video src="video-02.mp4" muted preload="metadata"></video>
+
+<!-- VIDEO 02 -->
+
+<button
+  class="card video"
+  onclick="openMedia('video','video-02.mp4')"
+>
+
+  <video
+    src="video-02.mp4"
+    muted
+    preload="metadata"
+  ></video>
+
   <span>▶</span>
+
 </button>
 
-<button class="card video" onclick="openMedia('video','video-03.mp4')">
-  <video src="video-03.mp4" muted preload="metadata"></video>
+
+<!-- VIDEO 03 -->
+
+<button
+  class="card video"
+  onclick="openMedia('video','video-03.mp4')"
+>
+
+  <video
+    src="video-03.mp4"
+    muted
+    preload="metadata"
+  ></video>
+
   <span>▶</span>
+
 </button>
 
-<button class="card video" onclick="openMedia('video','video-04.mp4')">
-  <video src="video-04.mp4" muted preload="metadata"></video>
+
+<!-- VIDEO 04 -->
+
+<button
+  class="card video"
+  onclick="openMedia('video','video-04.mp4')"
+>
+
+  <video
+    src="video-04.mp4"
+    muted
+    preload="metadata"
+  ></video>
+
   <span>▶</span>
+
 </button>
 
-<button class="card video" onclick="openMedia('video','video-05.mp4')">
-  <video src="video-05.mp4" muted preload="metadata"></video>
+
+<!-- VIDEO 05 -->
+
+<button
+  class="card video"
+  onclick="openMedia('video','video-05.mp4')"
+>
+
+  <video
+    src="video-05.mp4"
+    muted
+    preload="metadata"
+  ></video>
+
   <span>▶</span>
+
 </button>
 
-<button class="card video" onclick="openMedia('video','video-06.mp4')">
-  <video src="video-06.mp4" muted preload="metadata"></video>
+
+<!-- VIDEO 06 -->
+
+<button
+  class="card video"
+  onclick="openMedia('video','video-06.mp4')"
+>
+
+  <video
+    src="video-06.mp4"
+    muted
+    preload="metadata"
+  ></video>
+
   <span>▶</span>
+
 </button>
 
-<button class="card video" onclick="openMedia('video','video-07.mp4')">
-  <video src="video-07.mp4" muted preload="metadata"></video>
+
+<!-- VIDEO 07 -->
+
+<button
+  class="card video"
+  onclick="openMedia('video','video-07.mp4')"
+>
+
+  <video
+    src="video-07.mp4"
+    muted
+    preload="metadata"
+  ></video>
+
   <span>▶</span>
+
 </button>
+
 
 </main>
+
 
 <footer>
   de todo lo que vivimos, todavía queda mucho por recordar ♡
 </footer>
 
+
 </div>
 
-<div id="lb" class="lb" onclick="closeMedia(event)">
-  <button class="close">×</button>
-  <div id="viewer" class="viewer"></div>
+
+<!-- =========================================
+     VISOR DE FOTOS Y VIDEOS
+     ========================================= -->
+
+<div
+  id="lb"
+  class="lb"
+  onclick="closeMedia(event)"
+>
+
+  <button class="close">
+    ×
+  </button>
+
+  <div
+    id="viewer"
+    class="viewer"
+  ></div>
+
 </div>
+
+</div>
+
+
+<!-- =========================================
+     JAVASCRIPT
+     ========================================= -->
 
 <script>
-function openMedia(t,s){
-  let v=document.getElementById('viewer');
-  v.innerHTML='';
 
-  let e=document.createElement(
-    t==='video' ? 'video' : 'img'
+/*
+  PALABRA CLAVE:
+
+  coconut
+
+  Se compara mediante SHA-256.
+  La contraseña no se envía a ningún servidor.
+*/
+
+const PASSWORD_HASH =
+"23ebce72c4424e81ef48a495bc9ca88c93b8a34ab398bed854b76f1c784ab227";
+
+
+/* GENERAR SHA-256 */
+
+async function sha256(text){
+
+  const data =
+    new TextEncoder().encode(text);
+
+  const hash =
+    await crypto.subtle.digest(
+      "SHA-256",
+      data
+    );
+
+  return Array
+    .from(new Uint8Array(hash))
+    .map(
+      b => b.toString(16).padStart(2,"0")
+    )
+    .join("");
+
+}
+
+
+/* LOGIN */
+
+document
+  .getElementById("loginForm")
+  .addEventListener(
+    "submit",
+    async function(e){
+
+      e.preventDefault();
+
+      const input =
+        document.getElementById("password");
+
+      const error =
+        document.getElementById("error");
+
+      const entered =
+        await sha256(input.value);
+
+
+      if(entered === PASSWORD_HASH){
+
+        document
+          .getElementById("lock")
+          .style.display = "none";
+
+        document
+          .getElementById("site")
+          .style.display = "block";
+
+        error.style.display = "none";
+
+        input.value = "";
+
+      }else{
+
+        error.style.display = "block";
+
+        input.select();
+
+      }
+
+    }
   );
 
-  e.src=s;
 
-  if(t==='video'){
-    e.controls=true;
-    e.autoplay=true;
+/* ABRIR FOTO / VIDEO */
+
+function openMedia(t,s){
+
+  let v =
+    document.getElementById("viewer");
+
+  v.innerHTML = "";
+
+
+  let e =
+    document.createElement(
+      t === "video"
+        ? "video"
+        : "img"
+    );
+
+
+  e.src = s;
+
+
+  if(t === "video"){
+
+    e.controls = true;
+
+    e.autoplay = true;
+
   }
 
+
   v.appendChild(e);
-  document.getElementById('lb').classList.add('open');
+
+
+  document
+    .getElementById("lb")
+    .classList.add("open");
+
 }
+
+
+/* CERRAR VISOR */
 
 function closeMedia(e){
-  if(e && e.target.closest('#viewer')) return;
 
-  document.getElementById('lb').classList.remove('open');
+  if(
+    e &&
+    e.target.closest("#viewer")
+  ){
+    return;
+  }
 
-  let v=document.querySelector('#viewer video');
-  if(v) v.pause();
+
+  document
+    .getElementById("lb")
+    .classList.remove("open");
+
+
+  let v =
+    document.querySelector(
+      "#viewer video"
+    );
+
+
+  if(v){
+    v.pause();
+  }
+
 }
 
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape') closeMedia();
-});
+
+/* ESC PARA CERRAR */
+
+document.addEventListener(
+  "keydown",
+  e => {
+
+    if(e.key === "Escape"){
+
+      closeMedia();
+
+    }
+
+  }
+);
+
 </script>
 
 </body>
